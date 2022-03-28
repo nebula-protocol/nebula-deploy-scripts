@@ -1,0 +1,26 @@
+{
+  "astroportFactoryAddress": "terra15jsahkaf9p0qu8ye873p0u5z6g07wdad0tdq43",
+  "astroportPairCodeID": 28366,
+  "baseDenom": "uusd",
+  "tflAddress": "terra1dp0taj85ruc299rkdvzp4z5pfg6z6swaed74e6",
+  "feederAddress": "terra12jj7cfz7h5qz3a9txfnt7aw5rnj6ychpuq8mlk",
+  "targetAddress": "terra1es9tvtpsru3vlkjlyj5pu9vegdtluv3la2yeep",
+  "gov": {
+    "effectiveDelay": 330,
+    "proposalDeposit": "100000000",
+    "quorum": "0.05",
+    "threshold": "0.51",
+    "votingPeriod": 318,
+    "voterWeight": "0.5",
+    "snapshotPeriod": 100
+  },
+  "clusterFactory": {
+    "distributionSchedule": [
+      [0, 31539600, "50000000000000"],
+      [31539600, 63075600, "50000000000000"],
+      [63075600, 94611600, "50000000000000"],
+      [94611600, 126147600, "50000000000000"]
+    ]
+  },
+  "tokenCodeID": 33662
+}
