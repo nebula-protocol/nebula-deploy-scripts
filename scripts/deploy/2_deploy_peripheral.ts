@@ -65,7 +65,7 @@ async function main() {
     wallet,
     wallet.key.accAddress,
     {
-      owner: wallet.key.accAddress, // TODO: Change to real account structure to use
+      owner: network.airdropOwnerAddress,
       nebula_token: network.nebTokenAddress,
     }
   );
@@ -95,7 +95,7 @@ async function main() {
     wallet,
     wallet.key.accAddress,
     {
-      owner: wallet.key.accAddress, // TODO: Change to real account structure to use
+      owner: network.oracleOwnerAddress,
     }
   );
 

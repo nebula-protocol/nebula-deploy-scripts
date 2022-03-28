@@ -71,12 +71,6 @@ source ven/bin/activate
 pip install -r requirements.txt
 ```
 
-Build contract:
-
-```bash
-bash ../fastbuild.sh
-```
-
 Create `.env`:
 
 ```bash

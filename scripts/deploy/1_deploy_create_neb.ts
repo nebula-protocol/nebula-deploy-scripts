@@ -8,6 +8,7 @@ import {
   uploadContract,
   TokenAsset,
   NativeAsset,
+  sleep,
 } from "../lib/helpers.js";
 import { createPair, provideLiquidity } from "../lib/lp.js";
 
@@ -44,10 +45,6 @@ async function main() {
       },
     ],
   };
-
-  // Upload CW20 token contract code
-  network.tokenCodeID = await uploadContract(terra, wallet, CW20_BINARY_PATH!);
-  console.log(`Token codeId: ${network.tokenCodeID}`);
 
   // Instantiate NEB token contract
   let resp = await instantiateContract(

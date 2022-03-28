@@ -1,9 +1,11 @@
 {
-  "tokenCodeID": 1796,
+  "tokenCodeID": 153,
+  "airdropOwnerAddress": "",
+  "oracleOwnerAddress": "",
   "astroportFactoryAddress": "terra1fnywlw4edny3vw44x04xd67uzkdqluymgreu7g",
   "astroportPairCodeID": 1793,
   "baseDenom": "uusd",
-  "feederAddress": "terra12jj7cfz7h5qz3a9txfnt7aw5rnj6ychpuq8mlk",
+  "tflAddress": "terra1dp0taj85ruc299rkdvzp4z5pfg6z6swaed74e6",
   "gov": {
     "effectiveDelay": 86400,
     "proposalDeposit": "100000000",
