@@ -102,7 +102,7 @@ async function main() {
           {
             info: {
               token: {
-                contract_addr: "terra17qkrzsuzuyz09sgcnacery0ptzlztrr8pgcrgw",
+                contract_addr: network.nebTokenAddress,
               },
             },
             start_weight: network.lbp.pair.weights.token.start,
