@@ -20,13 +20,11 @@ async function main() {
   );
   let network = readArtifact(terra.config.chainID);
 
-  let oracleHubContractAddress = "";
-
   // update oracle hub owner to gov
   let updateOracleHubOwnerTx = await executeContract(
     terra,
     wallet,
-    oracleHubContractAddress,
+    network.oracleHubContractAddress,
     {
       update_config: {
         owner: network.govAddress,
