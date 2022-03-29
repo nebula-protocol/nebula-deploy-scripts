@@ -16,7 +16,6 @@ import { uploadAndInit } from "../lib/tx.js";
 const ARTIFACTS_PATH = "../artifacts";
 
 async function uploadLBPFactoryContractCode(terra: LCDClient, wallet: any) {
-  console.log("===INIT_LBP_START===");
   let network = readArtifact(terra.config.chainID);
 
   console.log("Uploading LBP Factory Contract code...");
@@ -52,7 +51,7 @@ async function uploadLBPPairContractCode(terra: LCDClient, wallet: any) {
 
 async function main() {
   // Setup
-  console.log("===EXECUTE_CREATE_NEB_START===");
+  console.log("===LBP_INIT_LBP_START===");
   const { terra, wallet } = newClient();
   let network = readArtifact(terra.config.chainID);
   console.log(
@@ -124,6 +123,6 @@ async function main() {
   console.log(`created pair, address: ${network.lbpPairAddress}`);
 
   writeArtifact(network, terra.config.chainID);
-  console.log("===INIT_LBP_FINISH===");
+  console.log("===LBP_INIT_LBP_FINISH===");
 }
 main().catch(console.log);
