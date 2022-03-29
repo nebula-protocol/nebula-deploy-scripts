@@ -12,7 +12,7 @@ import { uploadAndInit } from "../lib/tx.js";
 
 const ARTIFACTS_PATH = "../artifacts";
 
-async function uploadClusterTokenCode(terra: LCDClient, wallet: any) {
+async function uploadClusterCode(terra: LCDClient, wallet: any) {
   let network = readArtifact(terra.config.chainID);
 
   console.log("Uploading Cluster code...");
@@ -23,8 +23,8 @@ async function uploadClusterTokenCode(terra: LCDClient, wallet: any) {
     join(ARTIFACTS_PATH, "nebula_cluster.wasm")
   );
 
-  network["clusterTokenCodeID"] = resp;
-  console.log(`Cluster Token Code ID: ${network["clusterTokenCodeID"]}`);
+  network["clusterCodeID"] = resp;
+  console.log(`Cluster Code ID: ${network["clusterCodeID"]}`);
   writeArtifact(network, terra.config.chainID);
   return network;
 }
@@ -53,23 +53,14 @@ async function main() {
     `chainID: ${terra.config.chainID} wallet: ${wallet.key.accAddress}`
   );
   let network = readArtifact(terra.config.chainID);
+  console.log(`admin: ${network.multisigAddress}`);
 
   // Upload cluster and penalty code
-  network = await uploadClusterTokenCode(terra, wallet);
+  network = await uploadClusterCode(terra, wallet);
   network = await uploadPenaltyCode(terra, wallet);
 
   // Upload and instantiate peripheral contract
-  network = await uploadAndInit(
-    "airdrop",
-    terra,
-    wallet,
-    wallet.key.accAddress,
-    {
-      owner: network.airdropOwnerAddress,
-      nebula_token: network.nebTokenAddress,
-    }
-  );
-  network = await uploadAndInit("gov", terra, wallet, wallet.key.accAddress, {
+  network = await uploadAndInit("gov", terra, wallet, network.multisigAddress, {
     nebula_token: network.nebTokenAddress,
     quorum: network.gov.quorum,
     threshold: network.gov.threshold,
@@ -83,9 +74,8 @@ async function main() {
     "community",
     terra,
     wallet,
-    wallet.key.accAddress,
+    network.multisigAddress,
     {
-      nebula_token: network.nebTokenAddress,
       owner: network.govAddress,
     }
   );
@@ -93,9 +83,11 @@ async function main() {
     "oracle",
     terra,
     wallet,
-    wallet.key.accAddress,
+    network.multisigAddress,
     {
-      owner: network.oracleOwnerAddress,
+      owner: network.govAddress,
+      oracle_addr: network.oracleHubAddress,
+      base_denom: network.baseDenom,
     }
   );
 

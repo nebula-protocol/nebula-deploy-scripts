@@ -28,6 +28,7 @@ async function main() {
   console.log(
     `chainID: ${terra.config.chainID} wallet: ${wallet.key.accAddress}`
   );
+  console.log(`admin: ${network.multisigAddress}`);
 
   // Token info
   const TOKEN_NAME = "Nebula Token";

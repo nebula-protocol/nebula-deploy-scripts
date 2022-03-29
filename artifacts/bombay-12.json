@@ -1,7 +1,7 @@
 {
   "tokenCodeID": 1578,
   "airdropOwnerAddress": "",
-  "oracleOwnerAddress": "",
+  "oracleHubAddress": "",
   "astroportFactoryAddress": "terra15jsahkaf9p0qu8ye873p0u5z6g07wdad0tdq43",
   "astroportPairCodeID": 28366,
   "baseDenom": "uusd",
@@ -16,6 +16,7 @@
     "snapshotPeriod": 200
   },
   "clusterFactory": {
+    "protocolFeeRate": "0.001",
     "distributionSchedule": [
       [600, 31539600, "50000000000000"],
       [31539600, 63075600, "50000000000000"],

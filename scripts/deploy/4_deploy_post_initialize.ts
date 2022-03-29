@@ -21,8 +21,8 @@ async function main() {
     {
       post_initialize: {
         owner: network.govAddress,
-        astroport_factory: network.astroportFactoryAddress,
         nebula_token: network.nebTokenAddress,
+        astroport_factory: network.astroportFactoryAddress,
         staking_contract: network.lpStakingAddress,
         commission_collector: network.collectorAddress,
       },

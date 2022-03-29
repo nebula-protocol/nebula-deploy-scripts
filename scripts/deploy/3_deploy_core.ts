@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { newClient, readArtifact, writeArtifact } from "../lib/helpers.js";
-import { uploadAndInit } from "../lib/tx.js";
+import { uploadAndInit, execute } from "../lib/tx.js";
 
 async function main() {
   // Setup
@@ -10,18 +10,19 @@ async function main() {
     `chainID: ${terra.config.chainID} wallet: ${wallet.key.accAddress}`
   );
   let network = readArtifact(terra.config.chainID);
+  console.log(`admin: ${network.multisigAddress}`);
 
   // Deploy core contracts
   network = await uploadAndInit(
     "cluster_factory",
     terra,
     wallet,
-    wallet.key.accAddress,
+    network.multisigAddress,
     {
+      protocol_fee_rate: network.clusterFactory.protocolFeeRate,
       token_code_id: network.tokenCodeID,
-      cluster_code_id: network.clusterTokenCodeID,
+      cluster_code_id: network.clusterCodeID,
       base_denom: network.baseDenom,
-      protocol_fee_rate: "0.001",
       distribution_schedule: network.clusterFactory.distributionSchedule,
     }
   );
@@ -29,7 +30,7 @@ async function main() {
     "lp_staking",
     terra,
     wallet,
-    wallet.key.accAddress,
+    network.multisigAddress,
     {
       owner: network.clusterFactoryAddress,
       nebula_token: network.nebTokenAddress,
@@ -40,7 +41,7 @@ async function main() {
     "collector",
     terra,
     wallet,
-    wallet.key.accAddress,
+    network.multisigAddress,
     {
       distribution_contract: network.govAddress,
       astroport_factory: network.astroportFactoryAddress,
@@ -50,10 +51,20 @@ async function main() {
     }
   );
   network = await uploadAndInit(
+    "incentives_custody",
+    terra,
+    wallet,
+    network.multisigAddress,
+    {
+      owner: wallet.key.accAddress,
+      neb_token: network.nebTokenAddress,
+    }
+  );
+  network = await uploadAndInit(
     "incentives",
     terra,
     wallet,
-    wallet.key.accAddress,
+    network.multisigAddress,
     {
       factory: network.clusterFactoryAddress,
       custody: network.incentivesCustodyAddress,
@@ -63,14 +74,16 @@ async function main() {
       owner: network.govAddress,
     }
   );
-  network = await uploadAndInit(
-    "incentives_custody",
+
+  await execute(
+    "update_config",
+    network.incentivesCustodyAddress,
     terra,
     wallet,
-    wallet.key.accAddress,
     {
-      owner: network.incentivesAddress,
-      neb_token: network.nebTokenAddress,
+      update_config: {
+        owner: network.incentivesAddress,
+      },
     }
   );
 
