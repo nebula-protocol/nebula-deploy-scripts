@@ -6,7 +6,7 @@
 
 This script main handles the deployment of the various smart contracts that makes up the Nebula Protocol. These can be broken down into 4 main categories, each with its own deploy file:
 
-#### [deploy_create_neb](/scripts/deploy/1_deploy_create_neb.ts)
+#### [deploy_create_neb](/scripts/deploy/0_deploy_create_neb.ts)
 
 This script sets up environment related to the Nebula governance token.
 
@@ -15,33 +15,37 @@ This script sets up environment related to the Nebula governance token.
 - Creates a NEB-UST pair on the Astroport AMM
 - Provide initial NEB-UST liquidity on the created pair
 
-### [deploy_peripheral](/scripts/deploy/2_deploy_peripheral.ts)
+#### [deploy_airdrop](/scripts/deploy/1_deploy_airdrop.ts)
+
+This script uploads and instantiates only the Airdrop contract.
+
+#### [deploy_peripheral](/scripts/deploy/2_deploy_peripheral.ts)
 
 This handles the uploading and deployment of the various surrounding Nebula contracts. These contracts includes:
 
 - Uploading the [`cluster`](../contracts/nebula-cluster) token contract code
 - Uploading the (default) [`penalty`](../contracts/nebula-penalty) contract code
 - Deploying the [`gov`](../contracts/nebula-gov) contract
-- Deploying the [`community`](../contracts/nebula-community) contract
-- Deploying the [`incentives-custody`](../contracts/nebula-incentives-custody) contract
+- Deploying the [`community`](../contracts/nebula-community) contractcontract
 - Deploying the [`oracle`](../contracts/nebula-oracle) contract
 
-### [deploy_core](/scripts/deploy/3_deploy_core.ts)
+#### [deploy_core](/scripts/deploy/3_deploy_core.ts)
 
-Deploys and instantiate the following 'main' Nebula contracts.
+This deploys and instantiates the following 'main' Nebula contracts.
 
 - [`cluster-factory`](../contracts/nebula-cluster-factory)
 - [`lp-staking`](../contracts/nebula-lp-staking)
 - [`collector`](../contracts/nebula-collector)
 - [`incentives`](../contracts/nebula-incentives)
+- [`incentives-custody`](../contracts/nebula-incentives-custody)
 
-### [deploy_post_initialize](/scripts/deploy/4_deploy_post_initialize.ts)
+#### [deploy_post_initialize](/scripts/deploy/4_deploy_post_initialize.ts)
 
 This calls `PostInitialize` message on the `cluster-factory` contract
 
 ### Execute
 
-Once the contract is deployed, this script sets up the necessary remaining environment:
+Once the contract is deployed, [execute_create_clusters](/scripts/execute/1_execute_create_clusters.ts) sets up the necessary remaining environment:
 
 - Instantiates the `penalty` contract using the default parameters
 - Create a test Terra Ecosystem Index cluster comprising of `uluna` and `uusd` with equal weights
@@ -61,7 +65,7 @@ These addresses are then compiled into a timestamped CSV file in the [`deploymen
 
 Setup Python and Node environment:
 
-```bash 
+```bash
 # install Node modules
 npm install
 
