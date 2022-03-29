@@ -2,6 +2,7 @@
   "tokenCodeID": 153,
   "airdropOwnerAddress": "",
   "oracleHubAddress": "",
+  "multisigAddress": "terra1d7pesuk8hx8r07dn9az998j9j5cx7ewt7ny8a8",
   "astroportFactoryAddress": "terra1fnywlw4edny3vw44x04xd67uzkdqluymgreu7g",
   "astroportPairCodeID": 1793,
   "baseDenom": "uusd",
@@ -23,5 +24,28 @@
       [63093600, 94629600, "50000000000000"],
       [94629600, 126165600, "50000000000000"]
     ]
+  },
+  "lbp": {
+    "pair": {
+      "description": "LBP Description",
+      "time": {
+        "delay": 734400,
+        "duration": 432000
+      },
+      "weights": {
+        "token": {
+          "start": "98",
+          "end": "40"
+        },
+        "native": {
+          "start": "2",
+          "end": "60"
+        }
+      }
+    },
+    "lp": {
+      "tokenAmount": "20000000000000",
+      "nativeAmount": "1000000000000"
+    }
   }
 }
