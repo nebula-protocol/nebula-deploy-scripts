@@ -24,7 +24,7 @@ async function main() {
   let updateOracleHubOwnerTx = await executeContract(
     terra,
     wallet,
-    network.oracleHubContractAddress,
+    network.oracleHubAddress,
     {
       update_config: {
         owner: network.govAddress,
