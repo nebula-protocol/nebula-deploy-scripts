@@ -13,7 +13,7 @@ import { createCluster } from "../lib/clusters.js";
 // Main
 async function main() {
   // Setup
-  console.log("===EXECUTE_CREATE_CLUSTER_START===");
+  console.log("===EXECUTE_UPDATE_CONFIG_START===");
   const { terra, wallet } = newClient();
   console.log(
     `chainID: ${terra.config.chainID} wallet: ${wallet.key.accAddress}`
@@ -50,6 +50,7 @@ async function main() {
   );
   let updateOwnerTxHash = updateGovOwnerTx.txhash;
   console.log(`gov update_config excuted: ${updateOwnerTxHash}`);
+  console.log("===EXECUTE_UPDATE_CONFIG_FINISH===");
 }
 
 main().catch(console.log);
