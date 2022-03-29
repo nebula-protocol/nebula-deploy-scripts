@@ -12,7 +12,7 @@ import { createCluster } from "../lib/clusters.js";
 // Main
 async function main() {
   // Setup
-  console.log("===EXECUTE_CREATE_CLUSTER_START===");
+  console.log("===EXECUTE_INSTANTIATE_PENALTY_START===");
   const { terra, wallet } = newClient();
   console.log(
     `chainID: ${terra.config.chainID} wallet: ${wallet.key.accAddress}`
@@ -40,27 +40,8 @@ async function main() {
   );
   network.penaltyAddress = instantiateResponse.shift();
   console.log(`instantiated penalty contract: ${network.penaltyAddress}`);
-
-  // create EOA TER Cluster
-  // network = await createCluster(
-  //   "TER",
-  //   {
-  //     name: "LUNAUST",
-  //     description: "LUNA UST Cluster",
-  //     symbol: "LUST",
-  //     penalty: penaltyAddress,
-  //     target: [
-  //       new NativeAsset("uusd", "1000000000").withAmount(),
-  //       new NativeAsset("uluna", "1000000000").withAmount(),
-  //     ],
-  //     pricing_oracle: network.oracleAddress,
-  //     target_oracle: network.targetAddress,
-  //   },
-  //   terra,
-  //   wallet
-  // );
   writeArtifact(network, terra.config.chainID);
-  console.log("===EXECUTE_CREATE_CLUSTER_FINISH===");
+  console.log("===EXECUTE_INSTANTIATE_PENALTY_FINISH===");
 }
 
 main().catch(console.log);
