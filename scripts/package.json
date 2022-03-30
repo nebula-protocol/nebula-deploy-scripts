@@ -9,6 +9,7 @@
     "deploy": "bash deploy.sh",
     "execute": "bash execute.sh",
     "lbp": "bash lbp.sh",
+    "proposals": "bash proposals.sh",
     "compile": "python3 to_csv.py"
   },
   "dependencies": {

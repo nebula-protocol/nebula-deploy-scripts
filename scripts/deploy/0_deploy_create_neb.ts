@@ -5,12 +5,8 @@ import {
   readArtifact,
   instantiateContract,
   queryContract,
-  uploadContract,
-  TokenAsset,
-  NativeAsset,
-  sleep,
 } from "../lib/helpers.js";
-import { createPair, provideLiquidity } from "../lib/lp.js";
+import { createPair } from "../lib/lp.js";
 
 const TOKEN_INITIAL_AMOUNT =
   process.env.TOKEN_INITIAL_AMOUNT! || String(1_000_000_000_000000);

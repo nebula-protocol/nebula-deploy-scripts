@@ -30,7 +30,7 @@
       "description": "LBP Description",
       "time": {
         "delay": 900,
-        "duration": 600
+        "duration": 1800
       },
       "weights": {
         "token": {

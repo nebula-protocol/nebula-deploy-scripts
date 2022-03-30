@@ -6,7 +6,7 @@ import {
   uploadContract,
 } from "../lib/helpers.js";
 import { join } from "path";
-import { AccAddress, LCDClient } from "@terra-money/terra.js";
+import { LCDClient } from "@terra-money/terra.js";
 
 import { uploadAndInit } from "../lib/tx.js";
 
