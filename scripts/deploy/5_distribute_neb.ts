@@ -35,7 +35,7 @@ async function main() {
   await execute("transfer", network.nebTokenAddress, terra, wallet, {
     transfer: {
       amount: "10000000000000",
-      recipient: network.multisigAddress,
+      recipient: network.airdropAddress,
     },
   });
 
