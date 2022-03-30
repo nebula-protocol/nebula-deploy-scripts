@@ -28,7 +28,7 @@ async function main() {
         penalty: network.penaltyAddress,
         target: [
           new NativeAsset("uluna", "37").withAmount(),
-          new TokenAsset(network.cluster.aUST, "12").withAmount(),
+          new TokenAsset(network.cluster.austAddress, "12").withAmount(),
         ],
         pricing_oracle: network.oracleAddress,
         target_oracle: network.targetAddress,
@@ -59,14 +59,14 @@ async function main() {
   };
 
   // execute create poll
-  let createLBPPollTx = await executeContract(
+  let createClusterPollTx = await executeContract(
     terra,
     wallet,
     network.nebTokenAddress,
     receiveCW20Msg
   );
-  let createLBPPollTxHash = createLBPPollTx.txhash;
-  console.log(createLBPPollTxHash);
+  let createClusterPollTxHash = createClusterPollTx.txhash;
+  console.log(createClusterPollTxHash);
 
   writeArtifact(network, terra.config.chainID);
   console.log("===PROPOSALS_CREATE_LUST_FINISH===");
