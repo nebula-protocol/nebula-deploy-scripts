@@ -2,8 +2,8 @@
   "tokenCodeID": 1578,
   "airdropOwnerAddress": "",
   "oracleHubAddress": "",
-  "targetAddress": "terra1es9tvtpsru3vlkjlyj5pu9vegdtluv3la2yeep",
-  "multisigAddress": "terra1vvr23l35xytjjm2a8ryfppsrl2qanvvqgenwmg",
+  "targetAddress": "",
+  "multisigAddress": "terra1d7pesuk8hx8r07dn9az998j9j5cx7ewt7ny8a8",
   "astroportFactoryAddress": "terra15jsahkaf9p0qu8ye873p0u5z6g07wdad0tdq43",
   "astroportPairCodeID": 28366,
   "baseDenom": "uusd",
@@ -66,6 +66,11 @@
     }
   },
   "cluster": {
-    "austAddress": "terra1ajt556dpzvjwl0kl5tzku3fc3p3knkg9mkv8jl"
-  }
+    "aUST": "terra1ajt556dpzvjwl0kl5tzku3fc3p3knkg9mkv8jl"
+  },
+  "penaltyCodeID": 47588,
+  "clusterFactoryAddress": "terra103srr94gy8zgyey7ncg63gqfgac3y6nkdc28jh",
+  "penaltyAddress": "terra1yewe2n6e0plac44jauv86dgjwkw3weynyxadm2",
+  "nebTokenAddress": "terra1aj5yepjnmhdvh0xz3dfqeh30wday6tapvaze47",
+  "govAddress": "terra1yzsxytzktj7dsrhyajx34jzz8cxw0vws8cgvkg"
 }
