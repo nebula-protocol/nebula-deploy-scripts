@@ -4,10 +4,7 @@ import {
   readArtifact,
   writeArtifact,
   instantiateContract,
-  NativeAsset,
 } from "../lib/helpers.js";
-
-import { createCluster } from "../lib/clusters.js";
 
 // Main
 async function main() {

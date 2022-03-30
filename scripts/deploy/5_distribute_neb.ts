@@ -1,8 +1,6 @@
 import "dotenv/config";
-import { newClient, readArtifact, writeArtifact } from "../lib/helpers.js";
+import { newClient, readArtifact } from "../lib/helpers.js";
 import { execute } from "../lib/tx.js";
-
-const ARTIFACTS_PATH = "../artifacts";
 
 async function main() {
   console.log("===EXECUTE_NEB_TRANSFERS_START===");

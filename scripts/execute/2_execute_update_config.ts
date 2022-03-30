@@ -1,14 +1,5 @@
 import "dotenv/config";
-import {
-  newClient,
-  readArtifact,
-  writeArtifact,
-  instantiateContract,
-  NativeAsset,
-  executeContract,
-} from "../lib/helpers.js";
-
-import { createCluster } from "../lib/clusters.js";
+import { newClient, readArtifact, executeContract } from "../lib/helpers.js";
 
 // Main
 async function main() {

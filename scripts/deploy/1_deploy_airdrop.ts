@@ -1,12 +1,5 @@
 import "dotenv/config";
-import {
-  newClient,
-  writeArtifact,
-  readArtifact,
-  uploadContract,
-} from "../lib/helpers.js";
-import { join } from "path";
-import { AccAddress, LCDClient } from "@terra-money/terra.js";
+import { newClient, writeArtifact, readArtifact } from "../lib/helpers.js";
 
 import { uploadAndInit } from "../lib/tx.js";
 

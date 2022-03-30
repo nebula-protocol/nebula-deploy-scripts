@@ -9,9 +9,7 @@ import {
   executeContract,
 } from "../lib/helpers.js";
 import { join } from "path";
-import { AccAddress, LCDClient } from "@terra-money/terra.js";
-
-import { uploadAndInit } from "../lib/tx.js";
+import { LCDClient } from "@terra-money/terra.js";
 
 const ARTIFACTS_PATH = "../artifacts";
 
