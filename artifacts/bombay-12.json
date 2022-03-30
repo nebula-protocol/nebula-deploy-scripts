@@ -47,5 +47,8 @@
       "tokenAmount": "20000000000",
       "nativeAmount": "1000000000"
     }
+  },
+  "cluster": {
+      "aUST": "terra1ajt556dpzvjwl0kl5tzku3fc3p3knkg9mkv8jl"
   }
 }

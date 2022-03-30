@@ -232,6 +232,10 @@ export function toEncodedBinary(object: any) {
   return Buffer.from(JSON.stringify(object)).toString("base64");
 }
 
+export function msgToBase64Binary(msg: any) {
+  return Buffer.from(JSON.stringify(msg)).toString("base64");
+}
+
 export class NativeAsset {
   denom: string;
   amount?: string;

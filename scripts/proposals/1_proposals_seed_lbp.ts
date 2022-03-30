@@ -4,11 +4,8 @@ import {
   readArtifact,
   writeArtifact,
   executeContract,
+  msgToBase64Binary,
 } from "../lib/helpers.js";
-
-function msgToBase64Binary(msg: any) {
-  return Buffer.from(JSON.stringify(msg)).toString("base64");
-}
 
 async function main() {
   // Setup
