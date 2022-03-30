@@ -17,7 +17,7 @@ async function main() {
     wallet,
     network.oracleHubAddress,
     {
-      update_config: {
+      update_owner: {
         owner: network.govAddress,
       },
     }

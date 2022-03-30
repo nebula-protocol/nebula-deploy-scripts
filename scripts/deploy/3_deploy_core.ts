@@ -57,7 +57,7 @@ async function main() {
     network.multisigAddress,
     {
       owner: wallet.key.accAddress,
-      neb_token: network.nebTokenAddress,
+      nebula_token: network.nebTokenAddress,
     }
   );
   network = await uploadAndInit(

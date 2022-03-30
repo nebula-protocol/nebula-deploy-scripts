@@ -1,8 +1,8 @@
 {
   "tokenCodeID": 153,
-  "airdropOwnerAddress": "",
   "oracleHubAddress": "",
   "targetAddress": "",
+  "lbpPairAddress": "",
   "multisigAddress": "terra1d7pesuk8hx8r07dn9az998j9j5cx7ewt7ny8a8",
   "astroportFactoryAddress": "terra1fnywlw4edny3vw44x04xd67uzkdqluymgreu7g",
   "astroportPairCodeID": 1793,
@@ -20,10 +20,26 @@
   "clusterFactory": {
     "protocolFeeRate": "0.001",
     "distributionSchedule": [
-      [86400, 31557600, "50000000000000"],
-      [31557600, 63093600, "50000000000000"],
-      [63093600, 94629600, "50000000000000"],
-      [94629600, 126165600, "50000000000000"]
+      [
+        86400, 
+        31557600, 
+        "50000000000000"
+      ],
+      [
+        31557600, 
+        63093600, 
+        "50000000000000"
+      ],
+      [
+        63093600, 
+        94629600, 
+        "50000000000000"
+      ],
+      [
+        94629600, 
+        126165600, 
+        "50000000000000"
+      ]
     ]
   },
   "lbp": {

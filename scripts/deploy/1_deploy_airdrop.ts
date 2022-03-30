@@ -21,7 +21,7 @@ async function main() {
     wallet,
     network.multisigAddress,
     {
-      owner: network.airdropOwnerAddress,
+      owner: wallet.key.accAddress,
       nebula_token: network.nebTokenAddress,
     }
   );

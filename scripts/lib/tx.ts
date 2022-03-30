@@ -67,7 +67,7 @@ export async function execute(
 
   let tx = await executeContract(terra, wallet, contractAddress, msg, coins);
 
-  console.log(`${func} excuted: ${tx.txhash}`);
+  console.log(`${func} executed: ${tx.txhash}`);
   await sleep(20000);
 
   return tx;
