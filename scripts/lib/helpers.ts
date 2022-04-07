@@ -44,6 +44,7 @@ export function newClient(): Client {
     client.terra = new LCDClient({
       URL: String(process.env.LCD_CLIENT_URL),
       chainID: String(process.env.CHAIN_ID),
+      gasPrices: { uusd: 0.15 },
     });
     client.wallet = recover(client.terra, process.env.WALLET);
   } else {
