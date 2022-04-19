@@ -73,8 +73,10 @@ async function main() {
   // create gov poll
   let createPollMsg = {
     create_poll: {
-      title: "Nebula LBP Proposal",
-      description: "This poll will seed a NEB LBP Pool",
+      title: "Initiate and Seed Nebula Liquidity Bootstrapping Pool (LBP)",
+      description:
+        "The execution of this proposal will initiate and seed Nebula's liquidity bootstrapping pool (LBP) using 20 million NEB tokens and 1 million UST from the community pool. Once live, the pool will have a starting NEB-UST weight of 98-2 and ends at a 40-60 weight over the course of 5 days.",
+      link: "https://blog.neb.money/announcing-the-nebula-launch-sequence-455b8983c4c9",
       execute_msgs: [
         {
           contract: network.communityAddress,
