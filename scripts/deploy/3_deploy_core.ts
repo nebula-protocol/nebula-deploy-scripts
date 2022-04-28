@@ -12,6 +12,15 @@ async function main() {
   let network = readArtifact(terra.config.chainID);
   console.log(`admin: ${network.multisigAddress}`);
 
+  let distribution_schedule = network.clusterFactory.distributionSchedule;
+  if (terra.config.chainID === "columbus-5") {
+    let reward_start_timestamp = 1652270400;
+    let current_time = Math.floor(Date.now() / 1000);
+    let diff = reward_start_timestamp - current_time;
+    distribution_schedule[0][0] += diff;
+    console.log(distribution_schedule);
+  }
+  /* 
   // Deploy core contracts
   network = await uploadAndInit(
     "cluster_factory",
@@ -88,7 +97,7 @@ async function main() {
   );
 
   writeArtifact(network, terra.config.chainID);
-  console.log("===EXECUTE_DEPLOY_CORE_FINISH===");
+  console.log("===EXECUTE_DEPLOY_CORE_FINISH==="); */
 }
 
 main().catch(console.log);
