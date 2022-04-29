@@ -12,6 +12,14 @@ async function main() {
   let network = readArtifact(terra.config.chainID);
   console.log(`admin: ${network.multisigAddress}`);
 
+  let distribution_schedule = network.clusterFactory.distributionSchedule;
+  if (terra.config.chainID === "columbus-5") {
+    let reward_start_timestamp = 1652270400;
+    let current_time = Math.floor(Date.now() / 1000);
+    let diff = reward_start_timestamp - current_time;
+    distribution_schedule[0][0] += diff;
+  }
+
   // Deploy core contracts
   network = await uploadAndInit(
     "cluster_factory",
@@ -23,7 +31,7 @@ async function main() {
       token_code_id: network.tokenCodeID,
       cluster_code_id: network.clusterCodeID,
       base_denom: network.baseDenom,
-      distribution_schedule: network.clusterFactory.distributionSchedule,
+      distribution_schedule: distribution_schedule,
     }
   );
   network = await uploadAndInit(
