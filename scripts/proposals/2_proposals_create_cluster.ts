@@ -22,13 +22,14 @@ async function main() {
   let createClusterMsg = {
     create_cluster: {
       params: {
-        name: "LUNA-aUST",
-        description: "LUNA-aUST Cluster",
+        name: "LUST Cluster",
+        description:
+          "A cluster consisting of LUNA and aUST. The weight of each asset are dynamically set to the inverse of their relative market cap. https://forum.neb.money/t/new-cluster-proposal-introducing-lust-proposal-for-the-first-cluster-on-nebula-protocol",
         symbol: "LUST",
         penalty: network.penaltyAddress,
         target: [
-          new NativeAsset("uluna", "37").withAmount(),
-          new TokenAsset(network.cluster.austAddress, "12").withAmount(),
+          new NativeAsset("uluna", "3906").withAmount(),
+          new TokenAsset(network.cluster.austAddress, "543337").withAmount(),
         ],
         pricing_oracle: network.oracleAddress,
         target_oracle: network.targetAddress,
@@ -39,9 +40,10 @@ async function main() {
   // create gov poll
   let createPollMsg = {
     create_poll: {
-      title: "Nebula Create LUNA-aUST Cluster Proposal",
+      title: "Create LUST Cluster",
       description:
-        "This poll will create the first Nebula cluster containing LUNA and aUST.",
+        "Creates LUST as the first Nebula cluster, marking the full launch of Nebula. Afterward,  all functionalities will be enabled.\n\n LUST will hold LUNA and aUST in its inventory, with the weights inversely proportional to the asset's relative market cap.",
+      link: "https://forum.neb.money/t/new-cluster-proposal-introducing-lust-proposal-for-the-first-cluster-on-nebula-protocol",
       execute_msgs: [
         {
           contract: network.clusterFactoryAddress,
