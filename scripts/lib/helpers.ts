@@ -12,7 +12,7 @@ import {
   MsgMigrateContract,
   MsgStoreCode,
   MsgUpdateContractAdmin,
-  StdTx,
+  Tx,
   Wallet,
 } from "@terra-money/terra.js";
 import { readFileSync, writeFileSync } from "fs";
@@ -44,7 +44,7 @@ export function newClient(): Client {
     client.terra = new LCDClient({
       URL: String(process.env.LCD_CLIENT_URL),
       chainID: String(process.env.CHAIN_ID),
-      gasPrices: { uusd: 0.15 },
+      gasPrices: { uluna: 0.15 },
     });
     client.wallet = recover(client.terra, process.env.WALLET);
   } else {
@@ -80,7 +80,7 @@ export async function sleep(timeout: number) {
 
 export class TransactionError extends CustomError {
   public constructor(
-    public code: number,
+    public code: string | number,
     public codespace: string | undefined,
     public rawLog: string
   ) {
@@ -92,7 +92,7 @@ export async function createTransaction(wallet: Wallet, msg: Msg) {
   return await wallet.createTx({ msgs: [msg] });
 }
 
-export async function broadcastTransaction(terra: LCDClient, signedTx: StdTx) {
+export async function broadcastTransaction(terra: LCDClient, signedTx: Tx) {
   const result = await terra.tx.broadcast(signedTx);
   await sleep(TIMEOUT);
   return result;
@@ -103,8 +103,10 @@ export async function performTransaction(
   wallet: Wallet,
   msg: Msg
 ) {
-  const tx = await createTransaction(wallet, msg);
-  const signedTx = await wallet.key.signTx(tx);
+  //   const tx = await createTransaction(wallet, msg);
+  console.log("test");
+  const signedTx = await wallet.createAndSignTx({ msgs: [msg] });
+  console.log("test2");
   const result = await broadcastTransaction(terra, signedTx);
   if (isTxError(result)) {
     throw new TransactionError(result.code, result.codespace, result.raw_log);

@@ -79,8 +79,8 @@ Create `.env`:
 
 ```bash
 WALLET="mnemonic"
-LCD_CLIENT_URL=https://bombay-lcd.terra.dev
-CHAIN_ID=bombay-12
+LCD_CLIENT_URL=https://pisco-lcd.terra.dev
+CHAIN_ID=pisco-1
 
 TOKEN_INITIAL_AMOUNT="1000000000000000"
 ```

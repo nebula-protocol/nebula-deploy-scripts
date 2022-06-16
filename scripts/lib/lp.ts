@@ -11,7 +11,7 @@ export async function createPair(network: any, token: string) {
   // Create Pair
   let assetInfos = [
     new TokenAsset(tokenAddress).getInfo(),
-    new NativeAsset("uusd").getInfo(),
+    new NativeAsset("uluna").getInfo(),
   ];
 
   let pairCreationTx = await execute(
@@ -87,7 +87,7 @@ export async function provideLiquidity(
         assets: [asset1.withAmount(), asset2.withAmount()],
       },
     },
-    new Coins([new Coin("uusd", "10000000")])
+    new Coins([new Coin("uluna", "10000000")])
   );
   return network;
 }

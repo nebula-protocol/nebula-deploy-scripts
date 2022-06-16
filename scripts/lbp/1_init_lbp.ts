@@ -106,7 +106,7 @@ async function main() {
             end_weight: network.lbp.pair.weights.token.end,
           },
           {
-            info: { native_token: { denom: "uusd" } },
+            info: { native_token: { denom: "uluna" } },
             start_weight: network.lbp.pair.weights.native.start,
             end_weight: network.lbp.pair.weights.native.end,
           },
