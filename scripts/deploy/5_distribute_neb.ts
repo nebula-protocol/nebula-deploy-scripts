@@ -11,12 +11,12 @@ async function main() {
   let network = readArtifact(terra.config.chainID);
 
   // 317 million to TFL Wallet
-  await execute("transfer", network.nebTokenAddress, terra, wallet, {
-    transfer: {
-      amount: "317000000000000",
-      recipient: network.tflAddress,
-    },
-  });
+  //   await execute("transfer", network.nebTokenAddress, terra, wallet, {
+  //     transfer: {
+  //       amount: "317000000000000",
+  //       recipient: network.tflAddress,
+  //     },
+  //   });
   // 473 million to Community Pool
   await execute("transfer", network.nebTokenAddress, terra, wallet, {
     transfer: {

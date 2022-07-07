@@ -104,9 +104,7 @@ export async function performTransaction(
   msg: Msg
 ) {
   //   const tx = await createTransaction(wallet, msg);
-  console.log("test");
   const signedTx = await wallet.createAndSignTx({ msgs: [msg] });
-  console.log("test2");
   const result = await broadcastTransaction(terra, signedTx);
   if (isTxError(result)) {
     throw new TransactionError(result.code, result.codespace, result.raw_log);
@@ -137,12 +135,15 @@ export async function instantiateContract(
     admin_address,
     codeId,
     msg,
-    undefined
+    undefined,
+    "abcdef"
   );
   let result = await performTransaction(terra, wallet, instantiateMsg);
-  return result.logs[0].events[0].attributes
-    .filter((element) => element.key == "contract_address")
-    .map((x) => x.value);
+  return JSON.parse(result.raw_log)[0]
+    .events[0].attributes.filter(
+      (element: any) => element.key == "_contract_address"
+    )
+    .map((x: any) => x.value);
 }
 
 export async function executeContract(

@@ -1,7 +1,7 @@
 {
-  "tokenCodeID": 751,
-  "oracleHubAddress": "",
-  "targetAddress": "",
+  "tokenCodeID": 758,
+  "oracleHubAddress": "terra1umxshy9lymmseygh2f4ymztehqltl2cmvwdy7zlwuz6u4uvhehjsyf9arf",
+  "targetAddress": "terra1q0a00t9cla926g60tl9vkyhr3ecpryv6le44aalcxusalvqsxw2szl2xh2",
   "lbpPairAddress": "",
   "multisigAddress": "terra1vvr23l35xytjjm2a8ryfppsrl2qanvvqgenwmg",
   "astroportFactoryAddress": "terra1z3y69xas85r7egusa0c7m5sam0yk97gsztqmh8f2cc6rr4s4anysudp7k0",
@@ -9,13 +9,13 @@
   "baseDenom": "uluna",
   "tflAddress": "terra1dp0taj85ruc299rkdvzp4z5pfg6z6swaed74e6",
   "gov": {
-    "effectiveDelay": 330,
+    "effectiveDelay": 41,
     "proposalDeposit": "100000000",
     "quorum": "0.05",
     "threshold": "0.51",
-    "votingPeriod": 318,
+    "votingPeriod": 40,
     "voterWeight": "0.5",
-    "snapshotPeriod": 200
+    "snapshotPeriod": 30
   },
   "clusterFactory": {
     "protocolFeeRate": "0.001",
@@ -66,6 +66,21 @@
     }
   },
   "cluster": {
-    "austAddress": "terra1ajt556dpzvjwl0kl5tzku3fc3p3knkg9mkv8jl"
-  }
+    "astroAddress": "terra167dsqkh2alurx997wmycw9ydkyu54gyswe3ygmrs4lwume3vmwks8ruqnv"
+  },
+  "nebTokenAddress": "terra103g6fdulfjl2vqc6xgme73q40syu2huw8ustpy9xg674a67sqavq62h54m",
+  "nebUSTPairAddress": "terra1auf5h6xjq04t8tqqm5mm34cjrjhvme0k66xp3l97m7m2gcef2xgss07mj5",
+  "nebUSTLPAddress": "terra1p7mu48sk7v9uh5h7mq067p3vzs6tcalqtnr3c9790f47jwq7ng8scltvst",
+  "airdropAddress": "terra1rhs58clvfu4u2rln9zkzy8eqktgqncz2cjlsfg0yncztr7gg7xes38a48p",
+  "clusterCodeID": 1465,
+  "penaltyCodeID": 1466,
+  "govAddress": "terra10cnntj9v6hesltls5024shklzepf0hacgk9ht92letwzqgvp3xus4tldjn",
+  "communityAddress": "terra1jspesqdct9xyr0chh5dlg74dawyw7fvsml3exn0nw87dp6m93llsl70628",
+  "oracleAddress": "terra1tfuz74wqt9uuyfpwlt5s4awm3q6cuqxrsgx4t69epqqnu6je4vfshmxkuv",
+  "penaltyAddress": "terra17dz5skh7z02f7v4wqft50anjs07swsf39fp64q2hqxw2w05l6ydss2w4dm",
+  "clusterFactoryAddress": "terra1auws6l5d0ymnvyms7duplmt5ypgfe9ts0xwp5sejluj3psq5fu4s7tlju9",
+  "lpStakingAddress": "terra1emx8mruf5cpvc6p3rt3s29g8t0tszhtj3kqa6zf9tk3hwt7fxtdszh7xeq",
+  "collectorAddress": "terra1tgncw05h4lkpmq2dl5uvdyx59sct6sznfekxhgss58c6mz0ewcnskcspzh",
+  "incentivesCustodyAddress": "terra1gkzhedtwzfu766xxepsmvtzchd8uqhdw3re79g33y4t6mtgvewws2ppf5g",
+  "incentivesAddress": "terra1f8dtwjysnzr9qxakzlug73v4supf7zq7nzc3hafdmz5ydg9hmw7qunvw29"
 }

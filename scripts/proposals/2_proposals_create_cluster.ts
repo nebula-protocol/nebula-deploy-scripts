@@ -22,14 +22,14 @@ async function main() {
   let createClusterMsg = {
     create_cluster: {
       params: {
-        name: "LUST Cluster",
+        name: "LUNASTRO Cluster",
         description:
-          "A cluster consisting of LUNA and aUST. The weight of each asset are dynamically set to the inverse of their relative market cap. https://forum.neb.money/t/new-cluster-proposal-introducing-lust-proposal-for-the-first-cluster-on-nebula-protocol",
-        symbol: "LUST",
+          "A cluster consisting of LUNA and ASTRO. The weight of each asset are set to 1-1.",
+        symbol: "LUNASTRO",
         penalty: network.penaltyAddress,
         target: [
-          new NativeAsset("uluna", "3906").withAmount(),
-          new TokenAsset(network.cluster.austAddress, "543337").withAmount(),
+          new NativeAsset("uluna", "1").withAmount(),
+          new TokenAsset(network.cluster.astroAddress, "1").withAmount(),
         ],
         pricing_oracle: network.oracleAddress,
         target_oracle: network.targetAddress,
@@ -40,9 +40,9 @@ async function main() {
   // create gov poll
   let createPollMsg = {
     create_poll: {
-      title: "Create LUST Cluster",
+      title: "Create LUNASTRO Cluster",
       description:
-        "Creates LUST as the first Nebula cluster, marking the full launch of Nebula. Afterward,  all functionalities will be enabled.\n\n LUST will hold LUNA and aUST in its inventory, with the weights inversely proportional to the asset's relative market cap.",
+        "Creates LUNASTRO as the first Nebula cluster, marking the full launch of Nebula. Afterward, all functionalities will be enabled.\n\n LUNASTRO will hold LUNA and ASTRO in its inventory.",
       link: "https://forum.neb.money/t/new-cluster-proposal-introducing-lust-proposal-for-the-first-cluster-on-nebula-protocol",
       execute_msgs: [
         {

@@ -33,12 +33,12 @@ export async function createPair(network: any, token: string) {
 
   network[pairAddressName] = JSON.parse(pairCreationTx["raw_log"])[0][
     "events"
-  ][1]["attributes"][3]["value"];
+  ][1]["attributes"][0]["value"];
   console.log(`${pairAddressName}: ${network[pairAddressName]}`);
 
   network[lpAddressName] = JSON.parse(pairCreationTx["raw_log"])[0][
     "events"
-  ][1]["attributes"][4]["value"];
+  ][1]["attributes"][2]["value"];
   console.log(`${lpAddressName}: ${network[lpAddressName]}`);
 
   return network;
